@@ -2,18 +2,18 @@
 
 ## 技术栈
 
-| 技术 | 版本要求 |
-|------|----------|
-| Python | 3.8+ |
-| FastAPI | 0.104+ |
-| Uvicorn | 0.24+ |
-| Pydantic | 2.5+ |
-| Pydantic Settings | 2.1+ |
-| SQLAlchemy | 2.0+ |
-| PyMySQL | 1.1+ |
-| Alembic | 1.13+ |
-| Python-JOSE | 3.3+ |
-| uv | - |
+| 技术              | 版本要求 |
+| ----------------- | -------- |
+| Python            | 3.8+     |
+| FastAPI           | 0.104+   |
+| Uvicorn           | 0.24+    |
+| Pydantic          | 2.5+     |
+| Pydantic Settings | 2.1+     |
+| SQLAlchemy        | 2.0+     |
+| PyMySQL           | 1.1+     |
+| Alembic           | 1.13+    |
+| Python-JOSE       | 3.3+     |
+| uv                | -        |
 
 ## 目录结构
 
@@ -33,10 +33,13 @@ project/
 │   ├── middleware/              # 中间件（auth, cors）
 │   └── common/                  # 公共模块（result, util）
 ├── logs/                        # 日志目录
-├── pyproject.toml               # uv 配置
+├── scripts/                     # 脚本目录
+├── tests/                       # 测试目录
+├── pyproject.toml               # uv 项目配置
 ├── requirements.txt             # Python 依赖
 ├── .env.example                 # 环境变量示例
-└── run.py                       # 启动脚本
+├── run.py                       # 启动脚本
+└── README.md                    # 项目说明文档
 ```
 
 ## 核心原则
@@ -49,12 +52,12 @@ project/
 
 ## 命名规范
 
-| 类型 | 规范 | 示例 |
-|------|------|------|
-| 文件 | 小写加下划线 | `user_controller.py` |
-| 类 | 大驼峰 | `UserController` |
+| 类型      | 规范         | 示例                      |
+| --------- | ------------ | ------------------------- |
+| 文件      | 小写加下划线 | `user_controller.py`      |
+| 类        | 大驼峰       | `UserController`          |
 | 函数/变量 | 小写加下划线 | `get_user()`, `user_name` |
-| 常量 | 全大写下划线 | `SECRET_KEY` |
+| 常量      | 全大写下划线 | `SECRET_KEY`              |
 
 ## 分层架构
 
