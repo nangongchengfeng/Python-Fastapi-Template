@@ -1,0 +1,52 @@
+[project]
+name = "python-fastapi-template"
+version = "1.0.0"
+description = "基于 FastAPI 构建的高性能 Python 后端服务"
+requires-python = ">=3.11"
+authors = [
+    { name = "南宫乘风", email = "1794748404@qq.com" }
+]
+dependencies = [
+    "fastapi>=0.104.1",
+    "uvicorn>=0.24.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "sqlalchemy>=2.0.23",
+    "psycopg2-binary>=2.9.9",
+    "pymysql>=1.1.0",
+    "alembic>=1.13.1",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-multipart>=0.0.6",
+    "httpx>=0.25.2",
+    "APScheduler>=3.10.4",
+    "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.4",
+    "pytest-asyncio>=0.23.3",
+    "pytest-cov>=4.1.0",
+    "black>=23.12.1",
+    "ruff>=0.1.8",
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.5.25"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package-mode = false
+
+[tool.uv.pip]
+index-url = "https://pypi.org/simple"
+extra-index-urls = []
+
+[tool.uv.scripts]
+dev = "uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
+start = "uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4"
+test = "pytest tests/ -v"
+lint = "ruff check app/ tests/ && ruff format app/ tests/"
